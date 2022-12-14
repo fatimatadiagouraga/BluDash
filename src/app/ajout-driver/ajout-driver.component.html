@@ -1,0 +1,79 @@
+
+ <div class="card" style="margin: 2% 2%;">
+  <mat-icon (click)="close()">cancel</mat-icon>
+
+  <div class="card-header" style="background-color:rgb(238, 240, 241) ;text-align: center;">
+   Voulez-vous ajouer un chauffeur?
+  </div>
+  <div class="card-body">
+    <form   #datas="ngForm" (ngSubmit)="AjoutChauffeur(datas)" autocomplete="off">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >Nom</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Prenom</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="prenom" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Tel</span>
+        <input type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telephone" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Date Naissance</span>
+        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="dateNaissance" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Adresse</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="adresse" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Login</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="login" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Mot de pass</span>
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="password" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Magasin</span>
+
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="magasin" ngModel>
+          <option selected value="">Choose...</option>
+          <option *ngFor="let magasin of magasins" value="{{magasin.idMagasin}}">{{magasin.pseudo}}</option>
+          
+          
+        </select>
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Genre</span>
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="genre" ngModel>
+          <option selected value="">Choose...</option>
+          <option value="M">M</option>
+          <option value="F">F</option>
+          
+        </select>
+      </div>
+
+      
+      <div style="justify-content: space-between;display: flex;">
+        <button type="submit" class="btn btn-lg btn-primary">Ajouter</button>
+        <button type="reset" class="btn btn-lg btn-primary" >Annuler</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+      
+      
+      
+      
+          
+      
+      
+      
+      
+
+
+

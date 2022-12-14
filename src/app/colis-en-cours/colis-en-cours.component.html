@@ -1,0 +1,38 @@
+<body>
+  <button class="btn"><mat-icon (click)="close()">cancel</mat-icon></button>
+  
+<div style="background-color: rgb(224, 218, 218);text-align: center;">
+    <h1>Encours</h1>
+</div>
+<div class="row" style="margin:auto;">
+    <div class="col-sm-4" *ngFor="let c of colisEncours">
+      <div class="card" style="height: 10%;">
+      
+        <img src="assets/images/colis.jpg" alt="" srcset="" style="height: 100px;width:90% ;margin: auto;">
+        <div class="card-body">
+          <div style="height: 80%;margin-bottom:2% ;">
+
+            <h6 class="card-title" style="text-align: center;">{{c.code}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{c.description}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{c.ville}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;color: blue;">{{c.telDest}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;color: rgb(200, 150, 62);">{{c.telExp}}</h6>
+
+
+          </div>
+          
+          <div >
+            <!-- <mat-icon (click)="ColisById(c.idColis)">create</mat-icon>
+            <span class="material-icons" style="color: rgb(255, 0, 0);" >delete</span> -->
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;color: rgb(1, 59, 11);background-color: rgb(20, 52, 228);color: white;" (click)="onConfirm(c.idColis)">magasin</h6>
+            
+            <!-- <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span> -->
+          </div>
+        
+        </div>
+      </div>
+    </div><br>
+    
+</div>
+
+</body>

@@ -1,0 +1,62 @@
+
+
+
+   <div >
+    <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
+  </div>
+  
+  
+  <div class="sidebar">
+    
+   <app-menu></app-menu>
+  
+   
+  </div>
+  
+  
+  <div class="content">
+    <div style="margin-top: 10%;">
+
+      <button class="btn" >
+
+        <img src="assets/images/add.png" alt="" srcset="" style="height: 40px;width:50% ;margin: 2%;"  (click)="openDialog()"> 
+
+      </button>
+
+      <section>
+        <h1 class="text-shadow"> MAGASINS </h1>
+          
+      </section>
+
+    
+
+    <div class="row" style="margin:auto;">
+        <div class="col-sm-3" *ngFor="let magasin of magasins">
+          <div class="card" style="height: 10%;">
+          
+            <img src="assets/images/magasin.png" alt="" srcset="" style="height: 100px;width:100% ;">
+            <div class="card-body">
+              <div style="height: 70%;margin-bottom:2% ;">
+
+                <h6 class="card-title" style="text-align: center;">{{magasin.code}}</h6>
+                <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{magasin.pseudo}}</h6><br>
+
+              </div>
+              
+              <div style="display: flex;justify-content:space-between;">
+                <mat-icon (click)="MagasinById(magasin.idMagasin)">create</mat-icon>
+                <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;" (click)="onConfirm(magasin.idMagasin)">delete</span>
+                <!-- <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span> -->
+              </div>
+            
+            </div>
+          </div>
+        </div><br>
+        
+    </div>
+      
+    </div>
+  
+  </div>
+
+

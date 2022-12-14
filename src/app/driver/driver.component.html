@@ -1,0 +1,54 @@
+<div >
+  <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
+</div>
+
+
+<div class="sidebar">
+  
+ <app-menu></app-menu>
+
+ 
+</div>
+
+
+<div class="content">
+  <div class="haut">
+    <button class="btn" (click)="dialog()"><span class="material-icons" style="color: rgb(0, 0, 255);" >person_add</span></button>
+
+  </div>
+  <div>
+      
+    <section>
+      <h1 class="text-shadow"> CHAUFFEURS</h1>
+        
+    </section>
+      
+    <table class = "table table-striped table-bordered" *ngFor="let chauf of chauffeur">
+      <thead>
+        <tr>
+          <th> Nom</th>
+          <th> Prenom</th>
+          <th> Tel</th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr  >
+            <td> {{chauf.nom}} </td>
+            <td> {{chauf.prenom}} </td>
+            <td> {{chauf.telephone}} </td>
+            <td style="display: flex;justify-content: space-around;">
+              <mat-icon (click)="ChauffeurById(chauf.idUtilisateur)">create</mat-icon>
+              <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;" (click)="onConfirm(chauf.idUtilisateur)">delete</span>
+              <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+        
+</div>
+   
+
+
+

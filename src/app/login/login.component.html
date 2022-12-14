@@ -1,0 +1,38 @@
+
+
+<body>
+    <div >
+        <img src="assets/images/bluman.JPG" alt="" srcset="" style="width: 20%;margin-left: 40%;">
+    </div>
+
+    <div class="form-bg" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-12 col-md-23 col-sm-offset-12 col-sm-12" >
+                    <div class="form-container">
+                        <h3 class="title">My Account</h3>
+                        <form class="form-horizontal" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate autocomplete="nope">
+                            <div class="form-icon">
+                                <i class="fa fa-user-circle"></i>
+                            </div>
+                            <div class="form-group">
+                                <span class="input-icon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Username" name="login" ngModel required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <span class="input-icon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Password" name="password" ngModel required autocomplete="off">
+                                <span class="forgot"><a href="">Forgot Password?</a></span>
+                            </div>
+                            <button class="btn signin" type="submit">Login</button>
+                            <!-- <button  routerLink="/user">Login</button> -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+

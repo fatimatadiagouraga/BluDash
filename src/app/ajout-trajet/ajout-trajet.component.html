@@ -1,0 +1,51 @@
+<div class="card" style="margin: 2% 2%;">
+  <mat-icon (click)="close()">cancel</mat-icon>
+
+  <div class="card-header" style="background-color:rgb(238, 240, 241) ;text-align: center;">
+   Voulez-vous ajouer un trajet   ?
+  </div>
+  <div class="card-body">
+    <form   #datas="ngForm" (ngSubmit)="AjoutTrajet(datas)" autocomplete="off">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >Depart</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="depart" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >Arrivee</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="arrivee" ngModel>
+      </div>
+      
+     
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Parc</span>
+
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="parc" ngModel>
+          <option selected value="">Choose...</option>
+          <option *ngFor="let p of parc" value="{{p.idParc}}">{{p.numplaque}} {{p.nom}}</option>
+          
+          
+        </select> 
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Chauffeur</span>
+
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="utilisateur" ngModel>
+          <option selected value="">Choose...</option>
+          <option *ngFor="let c of chauffeur" value="{{c.idUtilisateur}}">{{c.nom}}  {{c.prenom}}</option>
+          
+          
+        </select> 
+      </div>
+      
+      
+
+      
+      <div style="justify-content: space-between;display: flex;">
+        <button type="submit" class="btn btn-lg btn-primary">Ajouter</button>
+        <button type="reset" class="btn btn-lg btn-primary" >Annuler</button>
+      </div>
+
+    </form>
+  </div>
+</div>

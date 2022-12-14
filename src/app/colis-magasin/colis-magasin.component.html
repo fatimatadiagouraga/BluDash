@@ -1,0 +1,36 @@
+<body>
+  <button class="btn"><mat-icon (click)="close()">cancel</mat-icon></button>
+<div style="background-color: rgb(224, 218, 218);text-align: center;">
+    <h1>Magasin</h1>
+</div>
+<div class="row" style="margin:auto;">
+    <div class="col-sm-4" *ngFor="let m of magasin">
+      <div class="card" style="height: 10%;">
+      
+        <img src="assets/images/colis.jpg" alt="" srcset="" style="height: 100px;width:90% ;margin: auto;">
+        <div class="card-body">
+          <div style="height: 70%;margin-bottom:2% ;">
+
+            <h6 class="card-title" style="text-align: center;">{{m.code}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{m.description}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{m.ville}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{m.telDest}}</h6>
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;">{{m.telExp}}</h6>
+
+
+
+
+          </div><br>
+          
+          <div >
+            <!-- <mat-icon >create</mat-icon> -->
+            <h6 style="text-align: center;font-weight: normal;font-size: smaller;background-color: blue;text-align: center;color: white;" (click)="onConfirm(m.idColis)">livrer</h6>
+          </div>
+        
+        </div>
+      </div>
+    </div><br>
+    
+</div>
+</body>
+

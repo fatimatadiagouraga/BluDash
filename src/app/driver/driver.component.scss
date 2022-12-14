@@ -1,0 +1,103 @@
+
+
+
+
+.haut{
+
+  margin-top: 10%;
+
+    .button {
+        background-color: rgb(123, 194, 235);
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+      }
+
+      .button:hover{
+        background-color: blue;
+      }
+      
+      
+      .button5 {border-radius: 50%;}
+
+}
+
+//text animation styla
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 2%;
+	font-size: 2em;
+	background: #212121;
+	color: rgb(20, 4, 4);
+	text-transform: uppercase;
+    background-color: rgb(220, 215, 215);
+	// gap: 30px;
+}
+
+h1 {
+	font-size: 20px;
+	text-decoration: underline;
+	@media (max-width: 768px) {
+		font-size: 1.3em;
+	}
+}
+
+.text-shadow {
+	font-style: italic;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: black;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px white;
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	letter-spacing: 0.2em;
+	animation: flicker 0.9s ease-in-out infinite alternate;
+
+	&:hover {
+		color: #fff;
+	}
+}
+
+.tags small {
+	@media (max-width: 768px) {
+		font-size: 2px;
+	}
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.5;
+		text-shadow: 2px 2px 10px blue;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 2px 2px 20px blue;
+	}
+}
+
+/////////////////////////////////////
+.sidebar {
+ 
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  justify-content: center;
+  
+}
+
+div.content {
+  margin-left: 25%;
+  padding: 1px 16px;
+  height: 100%;
+}

@@ -1,0 +1,23 @@
+<body>
+    <mat-icon (click)="close()">cancel</mat-icon>
+    <h5>Les trajets en cours</h5><br>
+    <div class="row" style="margin: auto;">
+        <div class="col-sm-3"  *ngFor="let t of trajet">
+          <div class="card">
+            <img src="assets/images/parc.jpg" alt="" srcset="" style="height: 100px;width:100% ;">
+            <div class="card-body" >
+              <h6 class="card-title" style="text-align: center;">{{t.code}}</h6>
+              <h6 style="text-align: center;">{{t.utilisateur.telephone}}</h6>
+              <p class="card-text" style="text-align: center;">{{t.parc.numplaque}}</p>
+
+            </div>
+            <div style="display: flex;justify-content:space-between;">
+              <mat-icon >create</mat-icon>
+              <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;">delete</span>
+              <!-- <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span> -->
+            </div>
+          </div>
+        </div>
+        
+    </div>
+</body>

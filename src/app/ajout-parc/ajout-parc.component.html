@@ -1,0 +1,41 @@
+<div class="card" style="margin: 2% 2%;">
+  <mat-icon (click)="close()">cancel</mat-icon>
+  <div class="card-header" style="background-color:rgb(238, 240, 241) ;text-align: center;">
+   Voulez-vous ajouer un Parc?
+  </div>
+  <div class="card-body">
+    <form  #dataParc="ngForm" (ngSubmit)="AjoutParc(dataParc)" class="form" autocomplete="off">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" style="width: 10%;">Nom</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Plaque</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="numplaque" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+        <input type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="description" ngModel>
+      </div>
+      
+      
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-secondary" type="submit" >AJOUTER</button>
+       
+      </div>
+
+    </form>
+  </div>
+</div>
+
+     
+        
+        
+     
+ 
+
+
+
+  
+
+
