@@ -176,7 +176,7 @@ login(login :String,password : String, admin :any){
   }
 
   AjouterTrajet(trajet:any){
-    return this.http.post(this.apiTrajet+'AddTrajetByAdmin',trajet);
+    return this.http.post("http://localhost:8080/api/trajet/AddTrajetByAdmin",trajet);
   }
 
   SupprimerTrajet(id:any){

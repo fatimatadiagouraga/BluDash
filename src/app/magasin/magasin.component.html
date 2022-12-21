@@ -1,36 +1,33 @@
 
+  <div >
+  <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
+</div>
 
 
-   <div >
-    <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
-  </div>
+<div class="sidebar">
+  
+  <app-menu></app-menu>
+
+  
+</div>
   
   
-  <div class="sidebar">
-    
-   <app-menu></app-menu>
-  
-   
-  </div>
-  
-  
-  <div class="content">
+<div class="content">
+  <div class="container-fluid"><br><br><br>
     <div style="margin-top: 10%;">
-
-      <button class="btn" >
-
-        <img src="assets/images/add.png" alt="" srcset="" style="height: 40px;width:50% ;margin: 2%;"  (click)="openDialog()"> 
-
-      </button>
 
       <section>
         <h1 class="text-shadow"> MAGASINS </h1>
           
       </section>
 
-    
+      <button class="btn" >
 
-    <div class="row" style="margin:auto;">
+        <img src="assets/images/add.png" alt="" srcset="" style="height: 40px;width:50% ;margin: 2%;"  (click)="openDialog()"> 
+
+      </button><br><br>
+
+      <div class="row" style="margin:auto;">
         <div class="col-sm-3" *ngFor="let magasin of magasins">
           <div class="card" style="height: 10%;">
           
@@ -52,11 +49,11 @@
             </div>
           </div>
         </div><br>
-        
-    </div>
+          
+      </div>
       
     </div>
-  
   </div>
+</div>
 
 

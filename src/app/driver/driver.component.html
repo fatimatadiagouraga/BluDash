@@ -8,44 +8,62 @@
  <app-menu></app-menu>
 
  
-</div>
+</div><br><br>
 
 
 <div class="content">
-  <div class="haut">
-    <button class="btn" (click)="dialog()"><span class="material-icons" style="color: rgb(0, 0, 255);" >person_add</span></button>
+  
+  <div class="container-fluid">
+    <div class="card" style="height: 5%;margin-top:-15%;">
+      <div class="card-body">
+      
+      </div>
+    </div><br>
+    
+    
+    
+
+    <div style="margin-top: 10%;"><br><br>
+      <section>
+        <h1 class="text-shadow"> Chauffeurs</h1>
+          
+      </section>
+      <button class="btn" (click)="dialog()"><span class="material-icons" style="color: rgb(0, 0, 255);" >person_add</span></button>
+  
+    </div>
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" placeholder="Search/ " aria-label="Search" />
+    </div><br>
+    <div>
+        
+      
+        
+      <table class = "table table-striped table-bordered" >
+        <thead>
+          <tr>
+            <th> Nom</th>
+            <th> Prenom</th>
+            <th> Tel</th>
+            <th> Actions </th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let chauf of chauffeur" >
+              <td> {{chauf.nom}} </td>
+              <td> {{chauf.prenom}} </td>
+              <td> {{chauf.telephone}} </td>
+              <td style="display: flex;justify-content: space-around;">
+                <mat-icon (click)="ChauffeurById(chauf.idUtilisateur)">create</mat-icon>
+                <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;" (click)="onConfirm(chauf.idUtilisateur)">delete</span>
+                <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
 
   </div>
-  <div>
-      
-    <section>
-      <h1 class="text-shadow"> CHAUFFEURS</h1>
-        
-    </section>
-      
-    <table class = "table table-striped table-bordered" *ngFor="let chauf of chauffeur">
-      <thead>
-        <tr>
-          <th> Nom</th>
-          <th> Prenom</th>
-          <th> Tel</th>
-          <th> Actions </th>
-        </tr>
-      </thead>
-        <tbody>
-          <tr  >
-            <td> {{chauf.nom}} </td>
-            <td> {{chauf.prenom}} </td>
-            <td> {{chauf.telephone}} </td>
-            <td style="display: flex;justify-content: space-around;">
-              <mat-icon (click)="ChauffeurById(chauf.idUtilisateur)">create</mat-icon>
-              <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;" (click)="onConfirm(chauf.idUtilisateur)">delete</span>
-              <span class="material-icons" style="color: rgb(0, 0, 255);">remove_red_eye</span>
-            </td>
-          </tr>
-        </tbody>
-    </table>
-  </div>
+  
         
 </div>
    

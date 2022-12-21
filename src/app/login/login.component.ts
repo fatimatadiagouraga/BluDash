@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit{
         this.route.navigateByUrl('/acceuil')
         // location.replace("")
       }
-          else{
+      else{
         this.snackbar.open('ERREUR','Mot de passe ou login incorrect', {
-          duration: 3000
+        duration: 3000
         });
             this.route.navigate(["/log"])
             let loginStatus = false;

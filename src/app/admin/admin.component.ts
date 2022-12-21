@@ -9,6 +9,7 @@ import { ServivesService } from '../servives.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import swal from 'sweetalert2';
+import { AjoutAdminComponent } from '../ajout-admin/ajout-admin.component';
 
 
 
@@ -26,9 +27,26 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
    
     this. listAdmin();
+   
   }
-  versAjoutAdmin(){
-    this.route.navigate(['/ajoutAdmin'])
+  dialog(){
+    this.dialogue.open(AjoutAdminComponent, {
+      width: '50%',
+      height: '80%',
+      position: {left:'30%', top: '10%'} ,
+      
+      
+      
+      hasBackdrop: true,
+      panelClass: 'dialogCss',
+    data: {
+    
+    routed: this.boiterecup,
+    
+        }
+       });
+    
+   
   }
 
   versModifAdmin(){

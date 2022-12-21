@@ -111,7 +111,7 @@ export class ParcComponent implements OnInit {
       this.dialogue.open(AjoutParcComponent, {
       width: '70%',
       height: '55%',
-      position: {left:'30%', top: '-20%'} ,
+      position: {left:'20%', top: '10%'} ,
       
       
       

@@ -18,24 +18,24 @@ div.content {
 
 //text animation styla
 section {
+	// margin-top: 10%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 2%;
-	font-size: 2em;
-	background: #212121;
+	font-size: 1em;
 	color: rgb(20, 4, 4);
 	text-transform: uppercase;
-    background-color: rgb(220, 215, 215);
-	// gap: 30px;
+	
+   
 }
 
 h1 {
-	font-size: 20px;
+	
 	text-decoration: underline;
 	@media (max-width: 768px) {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 }
 
@@ -50,6 +50,7 @@ h1 {
 	text-align: center;
 	letter-spacing: 0.2em;
 	animation: flicker 0.9s ease-in-out infinite alternate;
+	justify-content: space-around;
 
 	&:hover {
 		color: #fff;
@@ -74,3 +75,76 @@ h1 {
 }
 
 /////////////////////////////////////
+table {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+  }
+  
+  table tr {
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	padding: .35em;
+  }
+  
+  table th,
+  table td {
+	padding: .625em;
+	text-align: center;
+  }
+  
+  table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+	table {
+	  border: 0;
+	}
+  
+	
+	
+	table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+	
+	table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+	  margin-bottom: .625em;
+	}
+	
+	table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  font-size: .8em;
+	  text-align: right;
+	}
+	
+	table td::before {
+	  /*
+	  * aria-label has no advantage, it won't be read inside a table
+	  content: attr(aria-label);
+	  */
+	  content: attr(data-label);
+	  float: left;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+	
+	table td:last-child {
+	  border-bottom: 0;
+	}
+  }

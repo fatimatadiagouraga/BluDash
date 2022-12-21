@@ -1,4 +1,4 @@
-<div >
+<!-- <div >
   <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
 </div>
 <div class="sidebar">
@@ -6,17 +6,17 @@
   <app-menu></app-menu>
 
  
-</div>
+</div> -->
 <div class="content">
 
-  <div class="card" style="margin: 2% 2%;  margin-top: 15%;">
+  <div class="card" style="margin: 2% 2%;">
     <div class="card-header" style="background-color:rgb(238, 240, 241) ;text-align: center;">
      Voulez-vous ajouer un administrateur?
     </div>
     <div class="card-body">
       <form  #dataAdmin="ngForm" (ngSubmit)="AjoutAdmin(dataAdmin)" class="form" autocomplete="off">
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default" style="width: 10%;">Nom</span>
+          <span class="input-group-text" id="inputGroup-sizing-default">Nom</span>
           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel>
         </div>
         <div class="input-group mb-3">
@@ -72,8 +72,8 @@
          
         </div> -->
         <div style="justify-content: space-between;display: flex;">
-          <button type="submit" class="btn btn-lg btn-primary">Ajouter</button>
-          <button type="reset" class="btn btn-lg btn-primary" (click)="versAdmin()">Annuler</button>
+          <button type="submit" class="btn btn-sm btn-primary">Ajouter</button>
+          <button type="reset" class="btn btn-sm btn-primary" (click)="versAdmin()">Annuler</button>
         </div>
 
       </form>

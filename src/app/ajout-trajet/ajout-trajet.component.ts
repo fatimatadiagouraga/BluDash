@@ -14,6 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class AjoutTrajetComponent implements OnInit {
   parc: any;
   chauffeur: any;
+  h:any;
+  t: any;
 
   constructor(private Service :ServivesService,public snackbar:MatSnackBar,private route: Router,public dialogue :MatDialog){}
   ngOnInit(): void {
@@ -41,10 +43,11 @@ export class AjoutTrajetComponent implements OnInit {
   AjoutTrajet(datas : NgForm){
     datas.value.parc={"idParc" : datas.value['parc']}
     datas.value.utilisateur={"idUtilisateur" : datas.value['utilisateur']}
-
+    console.log(datas.value);
+    
 
     this.Service.AjouterTrajet(datas.value).subscribe(data =>{
-     console.log(datas);
+     
      if (data) {
        this.snackbar.open('Ajouter avec succès',' !!!', {
         duration: 3000
@@ -57,10 +60,6 @@ export class AjoutTrajetComponent implements OnInit {
        });
        
      }
-     
-  
- 
-
      
     });
     

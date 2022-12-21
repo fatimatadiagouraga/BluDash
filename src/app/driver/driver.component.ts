@@ -40,7 +40,7 @@ export class DriverComponent implements OnInit{
     {
       width: '70%',
       height: '80%',
-      position: {left:'20%', top: '10%'} ,
+      position: {left:'10%', top: '10%'} ,
       
       
       
@@ -59,7 +59,7 @@ export class DriverComponent implements OnInit{
     this.dialogue.open(ModifierDriverComponent, {
       width: '70%',
       height: '80%',
-      position: {left:'20%', top: '10%'} ,
+      position: {left:'25%', top: '10%'} ,
       
       
       

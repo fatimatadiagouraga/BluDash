@@ -3,6 +3,7 @@ import{Router} from '@angular/router';
 import { ServivesService } from '../servives.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-ajout-admin',
@@ -11,7 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AjoutAdminComponent implements OnInit{
 
-  constructor(private Service :ServivesService,public snackbar:MatSnackBar,private route: Router) { }
+  constructor(private Service :ServivesService,public snackbar:MatSnackBar,private route: Router,public dialogue :MatDialog) { }
 
   ngOnInit(){}
   versAdmin(){

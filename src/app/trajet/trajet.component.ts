@@ -39,7 +39,7 @@ export class TrajetComponent implements OnInit {
     this.dialogue.open(AjoutTrajetComponent, 
     {
       width: '70%',
-      height: '55%',
+      height: '75%',
       position: {left:'20%', top: '10%'} ,
       
       

@@ -30,19 +30,19 @@ section {
 	justify-content: center;
 	align-items: center;
 	height: 2%;
-	font-size: 2em;
-	background: #212121;
+	font-size: 1em;
+	// background: #212121;
 	color: rgb(20, 4, 4);
 	text-transform: uppercase;
-    background-color: rgb(220, 215, 215);
+    // background-color: rgb(220, 215, 215);
 	// gap: 30px;
 }
 
 h1 {
-	font-size: 20px;
+	// font-size: 20px;
 	text-decoration: underline;
 	@media (max-width: 768px) {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 }
 
