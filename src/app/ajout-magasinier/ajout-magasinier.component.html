@@ -1,55 +1,47 @@
-<!-- <div >
-  <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
-</div>
-<div class="sidebar">
+
+ <div class="card" style="margin: 2% 2%;">
+    <mat-icon (click)="close()">cancel</mat-icon>
   
-  <app-menu></app-menu>
-
- 
-</div> -->
-<div class="content">
-
-  <div class="card" style="margin: 2% 2%;">
     <div class="card-header" style="background-color:rgb(238, 240, 241) ;text-align: center;">
-     Voulez-vous ajouer un administrateur?
+     Voulez-vous ajouer un magasinier?
     </div>
     <div class="card-body">
-      <form  #dataAdmin="ngForm" (ngSubmit)="AjoutAdmin(dataAdmin)" class="form" autocomplete="off">
-
-
+      <form   #datas="ngForm" (ngSubmit)="AjoutMagasinier(datas)" autocomplete="off">
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Nom</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel pattern="[A-Za-z]{2,20}" #nom="ngModel">
+          <span class="input-group-text" id="inputGroup-sizing-default" >Nom</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel pattern="[A-Za-z]{2,20}" #nom="ngModel" required>
         </div>
         <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
           Respecter le Format svp : max 20 caracteres
         </div>
-
-
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Prenom</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="prenom" ngModel pattern="[A-Za-z]{2,20}" #prenom="ngModel">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="prenom" ngModel pattern="[A-Za-z]{2,20}" #prenom="ngModel" required
+          >
         </div>
         <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
           Respecter le Format svp : max 20 caracteres
         </div>
-
-
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Tel</span>
-          <input type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telephone" ngModel pattern="[0-9]{8,14}" #telephone="ngModel">
+          <input type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="telephone" ngModel   pattern="[0-9]{8,14}" #telephone="ngModel" required>
         </div>
         <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">
           Respecter le Format svp : max 13 chiffres min 8chiffres
         </div>
-
-
+  
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Date Naissance</span>
           <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="dateNaissance" ngModel>
         </div>
-
-
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Adresse</span>
           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="adresse" ngModel pattern=".{3,30}" #adresse="ngModel">
@@ -57,62 +49,58 @@
         <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="adresse.valid || adresse.pristine" class="alert alert-danger">
           Respecter le Format svp : max 30 caracteres
         </div>
-
-        
+  
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Login</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="login" ngModel  pattern="[A-Za-z].{6,12}"  #login="ngModel">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="login" ngModel pattern="[A-Za-z].{6,12}"  #login="ngModel" required>
         </div>
         <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="login.valid || login.pristine" class="alert alert-danger">
-          Respecter le Format svp : aAzZ  min 6 caracteres max 12 caracteres
+          Respecter le Format svp :min 6 caracteres max 12 caracteres
         </div>
-
-<!-- (?=.*[!@#$%^&*_=+-]) -->
-
+  
+  
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Mot de pass</span>
-          <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}"   ngModel #password="ngModel">
+          <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="password" ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}" #password="ngModel" required>
         </div>
         <div   style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="password.valid || password.pristine" class="alert alert-danger">
-          Respecter le Format svp : exemple Azer14  min 7 caracteres max 10 caracteres
+          Respecter le Format svp : exemple Azer14 min 7 caracteres max 10 caracteres
         </div>
-
-
-
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Profil</span>
-
-          <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="profil" ngModel>
-            <option selected value="">Choose...</option>
-            <option value="admin">admin</option>
-            <option value="superadmin">superadmin</option>
-            
-          </select>
-        </div>
+  
+  
+        
         
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Genre</span>
-          <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="genre" ngModel>
+          <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="genre" ngModel required>
             <option selected value="">Choose...</option>
             <option value="M">M</option>
             <option value="F">F</option>
             
           </select>
         </div>
-
+  
+        
         <div style="justify-content: space-between;display: flex;">
-          <button type="submit" class="btn btn-sm btn-primary">Ajouter</button>
-          <button type="reset" class="btn btn-sm btn-primary" (click)="versAdmin()">Annuler</button>
+          <button type="submit" class="btn btn-lg btn-primary">Ajouter</button>
+          <button type="reset" class="btn btn-lg btn-primary" >Annuler</button>
         </div>
-
+  
       </form>
     </div>
   </div>
-
-</div> 
         
-      
-   
-
-
-
+        
+        
+        
+            
+        
+        
+        
+        
+  
+  
+  
+  

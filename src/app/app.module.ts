@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
 import { LoginComponent } from './login/login.component';
-import { UsersComponent } from './users/users.component';
 import { DriverComponent } from './driver/driver.component';
 import { ParcComponent } from './parc/parc.component';
 import { MagasinComponent } from './magasin/magasin.component';
@@ -14,8 +14,6 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { RouterModule, Routes } from '@angular/router';
-
-
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
@@ -24,9 +22,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
-
+import {MatSelectModule} from '@angular/material/select';
 
 import { AjoutDriverComponent } from './ajout-driver/ajout-driver.component';
 import { ModifierDriverComponent } from './modifier-driver/modifier-driver.component';
@@ -47,12 +43,16 @@ import { ColisEnCoursComponent } from './colis-en-cours/colis-en-cours.component
 import { ColisMagasinComponent } from './colis-magasin/colis-magasin.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeadComponent } from './head/head.component';
+import { AjoutMagasinierComponent } from './ajout-magasinier/ajout-magasinier.component';
+import { ModifMagasinierComponent } from './modif-magasinier/modif-magasinier.component';
+import { ListMagasinierComponent } from './list-magasinier/list-magasinier.component';
+import { RegionComponent } from './region/region.component';
+import { CercleComponent } from './cercle/cercle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsersComponent,
     DriverComponent,
     ParcComponent,
     MagasinComponent,
@@ -77,12 +77,22 @@ import { HeadComponent } from './head/head.component';
     ColisEnCoursComponent,
     ColisMagasinComponent,
     MenuComponent,
-    HeadComponent
+    HeadComponent,
+    AjoutMagasinierComponent,
+    ModifMagasinierComponent,
+    ListMagasinierComponent,
+    RegionComponent,
+    CercleComponent
   ],
   exports: [
+
     MatIconModule
+
     ],
+
+
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
@@ -94,9 +104,14 @@ import { HeadComponent } from './head/head.component';
     FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule, 
+    MatSelectModule
     
   ],
+
   providers: [],
+
   bootstrap: [AppComponent]
+
 })
+
 export class AppModule { }

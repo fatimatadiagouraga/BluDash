@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit{
 
     this.data=localStorage.getItem('isLogin');
     this.user=JSON.parse(this.data)
+   
     console.log(this.user);
     this.loginStatus = JSON.parse(localStorage['loginStatus']);
 

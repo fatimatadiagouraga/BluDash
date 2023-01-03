@@ -12,6 +12,8 @@ export class ServivesService {
   apiColis= 'http://localhost:8080/api/colis/';
   apiTrajet= 'http://localhost:8080/api/trajet/';
   apiChauffeur= 'http://localhost:8080/api/users/';
+  apiRegion= 'http://localhost:8080/api/';
+
 
 
 
@@ -44,6 +46,10 @@ login(login :String,password : String, admin :any){
 
   ModifAdmin(AdminModif:any, id:any){
     return this.http.put(this.apiAdmin+'UpdateAdmin/'+id, AdminModif);
+  }
+
+  nombre() {
+    return this.http.get(this.apiAdmin+'nombre');
   }
   
 
@@ -124,6 +130,24 @@ login(login :String,password : String, admin :any){
     return this.http.delete(this.apiChauffeur+'DeleteUser/'+id);
   }
 
+  //Magasinier
+
+  ListMagasinierActif() {
+    return this.http.get(this.apiChauffeur+'ListMagasinierActif');
+  }
+  
+  AjouterMagasinier(magasinier:any){
+    return this.http.post(this.apiChauffeur+'AddUserMagasinier',magasinier)
+  }
+
+  ModifMagasinier(MagasinierModif:any, id:any){
+    return this.http.put(this.apiChauffeur+'UpdateUser/'+id, MagasinierModif);
+  }
+
+  MagasinierById(id:any){
+    return this.http.get(this.apiChauffeur+'UserById/'+id);
+  }
+
 
   //API colis  
 
@@ -161,6 +185,18 @@ login(login :String,password : String, admin :any){
   ModifColisforAdd(ColisModif:any, id:any){
     return this.http.put(this.apiColis+'UpdateColisforAdd/'+id, ColisModif);
   }
+  nombreEncours(){
+    return this.http.get(this.apiColis+'nombreEncours'); 
+
+  }
+  nombreMagasin(){
+    return this.http.get(this.apiColis+'nombreMagasin'); 
+
+  }
+  nombreLivrer(){
+    return this.http.get(this.apiColis+'nombreLivrer'); 
+
+  }
 
   //API trajet
 
@@ -190,5 +226,29 @@ login(login :String,password : String, admin :any){
   ModifTrajet(ModifTrajet:any, id:any){
     return this.http.put(this.apiTrajet+'UpdateUser/'+id,ModifTrajet);
   }
+
+  //Api Region
+
+  ListRegion(){
+    return this.http.get(this.apiRegion+'AllRegion'); 
+
+  }
+
+  AjouterRegion(region:any){
+    return this.http.post("http://localhost:8080/api/AddRegion",region);
+  }
+
+  SupprimerRegion(id:any){
+    return this.http.delete(this.apiRegion+'DeleteRegion/'+id);
+  }
+
+  RegionById(id:any){
+    return this.http.get(this.apiRegion+'RegionById/'+id);
+  }
+
+  ModifRegion(ModifRegion:any, id:any){
+    return this.http.put(this.apiRegion+'UpdateRegion/'+id,ModifRegion);
+  }
+
 
 }

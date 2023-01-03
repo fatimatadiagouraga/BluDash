@@ -34,8 +34,7 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
         this.route.navigateByUrl('/acceuil')
         // location.replace("")
-      }
-      else{
+      }else{
         this.snackbar.open('ERREUR','Mot de passe ou login incorrect', {
         duration: 3000
         });
@@ -47,9 +46,9 @@ export class LoginComponent implements OnInit{
             
           } 
         
-        }, 
+        }
         
-        )
+        );
       }
   
 

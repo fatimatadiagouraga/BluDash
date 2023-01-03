@@ -7,12 +7,29 @@
   <div class="card-body">
     <form   #datas="ngForm" (ngSubmit)="AjoutTrajet(datas)" autocomplete="off">
       <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default" >Depart</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="depart" ngModel>
+        <span class="input-group-text" id="inputGroup-sizing-default" >RegionDepart</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="regiondepart" ngModel>
       </div>
       <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default" >Arrivee</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="arrivee" ngModel>
+        <span class="input-group-text" id="inputGroup-sizing-default" >CercleDepart</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cercledepart" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >VillageDepart</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="villagedepart" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >RegionArrivee</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="regionarrivee" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >CercleArrivee</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cerclearrivee" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" >VillageArrivee</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="villagearrivee" ngModel>
+
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default" >DateDepart</span>
@@ -25,6 +42,14 @@
         
         <input type="number" class="form-control" name="heureDep" ngModel placeholder="heure">
         <input type="number" class="form-control" name="minuteDep" ngModel placeholder="minutes">
+      </div>
+
+      <div class="input-group mb-3">
+        
+        <span class="input-group-text" id="inputGroup-sizing-default">HeureArrivee</span>
+        
+        <input type="number" class="form-control" name="heureArrivee" ngModel placeholder="heure">
+        <input type="number" class="form-control" name="minuteArrivee" ngModel placeholder="minutes">
       </div>
       
      

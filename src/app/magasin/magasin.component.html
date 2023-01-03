@@ -1,5 +1,4 @@
-
-  <div >
+<div >
   <app-head style="position: fixed;width: 100%;z-index: 1;margin-left: 25%;height: 20%;"></app-head>
 </div>
 
@@ -11,15 +10,32 @@
   
 </div>
   
-  
 <div class="content">
   <div class="container-fluid"><br><br><br>
     <div style="margin-top: 10%;">
+      
+      <form>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Magasiniers</mat-label>
+          <mat-select  >
+            <mat-option (click)="openDialogAjoutMagasinier()">
+              Ajouter
+            </mat-option>
+            <mat-option (click)="openDialogListMagasinier()" >
+              Liste
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+      </form>
 
       <section>
         <h1 class="text-shadow"> MAGASINS </h1>
           
       </section>
+
+      
 
       <button class="btn" >
 

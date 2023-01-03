@@ -5,17 +5,32 @@
   </div>
   <div class="card-body">
     <form  #dataParc="ngForm" (ngSubmit)="AjoutParc(dataParc)" class="form" autocomplete="off">
+
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default" >Nom</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nom" ngModel #nom="ngModel" pattern=".{2,20}">
       </div>
+      <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom.valid ||nom.pristine" class="alert alert-danger">
+        Respecter le Format svp : min 2 caracteres max 20
+      </div>
+
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Plaque</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="numplaque" ngModel>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="numplaque" ngModel #numplaque="ngModel" pattern=".{6,10}">
       </div>
+      <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="numplaque.valid ||numplaque.pristine" class="alert alert-danger">
+        Respecter le Format svp : min 6 caracteres max 10
+      </div>
+
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
-        <input type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="description" ngModel>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="description" ngModel #description="ngModel" pattern=".{10,255}">
+      </div>
+      <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="description.valid ||description.pristine" class="alert alert-danger">
+        Respecter le Format svp : min 10 caracteres max 255
       </div>
       
       

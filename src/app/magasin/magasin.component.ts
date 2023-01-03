@@ -11,6 +11,8 @@ import { ServivesService } from '../servives.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import swal from 'sweetalert2';
+import { AjoutMagasinierComponent } from '../ajout-magasinier/ajout-magasinier.component';
+import { ListMagasinierComponent } from '../list-magasinier/list-magasinier.component';
 
 @Component({
   selector: 'app-magasin',
@@ -52,6 +54,31 @@ export class MagasinComponent implements OnInit {
   
      });
     }
+
+    openDialogAjoutMagasinier(){
+      this.dialogue.open(AjoutMagasinierComponent, {
+      width: '50%',
+      height: '55%',
+      position: {left:'30%', top: '10%'} ,
+      
+      
+      
+      hasBackdrop: true,
+      panelClass: 'dialogCss',
+    
+       });
+      }
+
+      openDialogListMagasinier(){
+        this.dialogue.open(ListMagasinierComponent, {
+        width: '80%',
+        height: '75%',
+        position: {left:'10%', top: '10%'} ,
+        hasBackdrop: true,
+        panelClass: 'dialogCss',
+      
+         });
+        }
 
   
 

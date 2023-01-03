@@ -24,7 +24,7 @@
     "@types/jquery": "^3.5.14",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
-    "jquery": "^3.6.1",
+    "jquery": "^3.6.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.14",

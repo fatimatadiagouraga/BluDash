@@ -5,11 +5,12 @@
 
       <summary></summary>
       <nav class="menu" >
-        <a href="/accueil" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">home</span>Accueil</a>
-        <a href="/admin" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">person</span>Admin</a>
+        <a href="/acceuil" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">home</span>Accueil</a>
+        <a href="/admin" class="list-group-item list-group-item-action "  *ngIf="user.profil == 'superadmin'"><span class="material-icons" style="color: rgb(0, 0, 255);">person</span>Admin</a>
+        <a href="/driver" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">airline_seat_recline_normal</span>Chauffeur</a>
         <a href="/parc" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">commute</span>Parc</a>
         <a href="/magasin" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">museum</span>Magasin</a>
-        <a href="/driver" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">airline_seat_recline_normal</span>Chauffeur</a>
+        
         <a href="/trajet" class="list-group-item list-group-item-action "><span class="material-icons" style="color: rgb(0, 0, 255);">place</span>Trajet</a>
         <a href="/colis" class="list-group-item list-group-item-action"><span class="material-icons" style="color: rgb(0, 0, 255);">widgets</span>Colis</a>
         <!-- <a href="/user" class="list-group-item list-group-item-action"><span class="material-icons" style="color: rgb(0, 0, 255);">delete</span>Corbeille</a> -->

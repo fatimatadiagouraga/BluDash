@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { ModifAdminComponent } from '../modif-admin/modif-admin.component';
 
 import{Router} from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,65 +8,33 @@ import { ServivesService } from '../servives.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import swal from 'sweetalert2';
-import { AjoutAdminComponent } from '../ajout-admin/ajout-admin.component';
-
-
-
+import { ModifMagasinierComponent } from '../modif-magasinier/modif-magasinier.component';
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  selector: 'app-list-magasinier',
+  templateUrl: './list-magasinier.component.html',
+  styleUrls: ['./list-magasinier.component.scss']
 })
-export class AdminComponent implements OnInit {
-  administrateurs:any;
+export class ListMagasinierComponent implements OnInit{
+  magasinier: any;
   boiterecup: any;
 
-  constructor(private Service :ServivesService,public snackbar:MatSnackBar,private route: Router,
-    public dialogue :MatDialog,private routed:ActivatedRoute ){}
-
+  constructor(private Service :ServivesService,public snackbar:MatSnackBar,private route: Router,public dialogue :MatDialog,private routed:ActivatedRoute){}
   ngOnInit(): void {
-   
-    this. listAdmin();
-   
-  }
-  dialog(){
-    this.dialogue.open(AjoutAdminComponent, {
-      width: '50%',
-      height: '80%',
-      position: {left:'30%', top: '10%'} ,
-      
-      
-      
-      hasBackdrop: true,
-      panelClass: 'dialogCss',
-    data: {
+
+    this.listMagasinier();
     
-    routed: this.boiterecup,
-    
-        }
-       });
-    
-   
   }
 
-  versModifAdmin(){
-    this.route.navigate(['/modifAdmin'])
-  }
-
-  versAdmin(){
-    this.route.navigate(['/admin'])
-  }
-
-  listAdmin(){
-    return this.Service.ListAdminActif().subscribe(data => {
-      this.administrateurs =data;
-      console.log(this.administrateurs);
+  listMagasinier(){
+    return this.Service.ListMagasinierActif().subscribe(data => {
+      this.magasinier =data;
+      console.log(this.magasinier);
      
     });
   }
 
-  SuppAdmin(idAdmin:any){
-    this.Service.SupprimerAdmin(idAdmin).subscribe(data =>{
+  SuppChauffeur(idUtilisateur:any){
+    this.Service.SupprimerChauffeur(idUtilisateur).subscribe(data =>{
       this.ngOnInit();
     }
     );
@@ -85,7 +52,7 @@ export class AdminComponent implements OnInit {
         confirmButtonText: 'Je supprime '
 }).then((result) => {
   if (result.value) {
-    this. SuppAdmin(id);
+    this. SuppChauffeur(id);
     swal.fire(
       'Supprimer!',
       'Admin est supprimé avec succès.',
@@ -105,15 +72,15 @@ export class AdminComponent implements OnInit {
   }
 
 
-  AdminById(id:any){
-    this.Service.AdminById(id).subscribe(dataAdmin => {
+  MagasinierById(id:any){
+    this.Service.ChauffeurById(id).subscribe(dataChauffeur => {
         
     //boiterecup fonction qui permet de recuperer les données a modifier par id
-    this.boiterecup =dataAdmin;
-    this.dialogue.open(ModifAdminComponent, {
-      width: '50%',
+    this.boiterecup =dataChauffeur;
+    this.dialogue.open(ModifMagasinierComponent, {
+      width: '70%',
       height: '80%',
-      position: {left:'30%', top: '10%'} ,
+      position: {left:'25%', top: '10%'} ,
       
       
       

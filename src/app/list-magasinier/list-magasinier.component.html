@@ -1,0 +1,46 @@
+<div class="content">
+    <div class="container-fluid"><br>
+  
+      <section>
+        <h1 class="text-shadow">Magasiniers</h1>
+      </section><br>
+
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control" placeholder="Search/ " aria-label="Search" />
+      </div><br>
+  
+      <table>
+            <thead >
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Naissance</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Genre</th>
+                
+                <th scope="col">Actions</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let t of magasinier">
+                <td data-label="Nom"> {{t.nom}} </td>
+                <td data-label="Prenom"> {{t.Prenom}} </td>
+                <td data-label="Telephone"> {{t.telephone}} </td>
+                <td data-label="Naissance">{{t.dateNaissance}}</td>
+                <td data-label="Adresse"> {{t.adresse}} </td>
+                <td data-label="Genre"> {{t.genre}} </td>
+                
+                <td  style="display: flex;justify-content: space-around;">
+                <!-- <mat-icon >create</mat-icon> -->
+                <span class="material-icons" style="color: rgb(255, 0, 0);margin-left: 10px;" (click)="onConfirm(t.idUtilisateur)">delete</span>
+                <span class="material-icons" style="color: blue;margin-left: 10px;" (click)="MagasinierById(t.idUtilisateur)">create</span>
+
+                    
+                </td>
+            </tr>
+            </tbody>
+      </table>
+    </div>
+</div>
